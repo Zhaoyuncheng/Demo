@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button id="btn">发送AJAX请求</button>
+<input id="lname" name="lname"> <span id="info"></span>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script>
+	$(function(){
+		$("#btn").click(function(){
+			$.post("AjaxServlet",{lname:123},function(data){
+				//alert(data);
+				//1. 接受数据
+				var data1 = data;
+				//2. 获取需要显示的对象
+				var $info = $("#info");
+				//3. 数据添加到对象中
+				$info.text(data1).css('color','green');
+			});
+		});
+		
+		
+	});
+</script>
+</body>
+</html>

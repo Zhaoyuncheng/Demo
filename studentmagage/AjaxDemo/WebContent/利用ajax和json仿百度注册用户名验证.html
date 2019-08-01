@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="#" enctype="multypart">
+用户名：<input type="range" id="lname" name="lname" placeholder="请输入用户名...." readonly><br/>
+<input type="text" id="lname" name="lname" placeholder="请输入用户名...." disabled><br/>
+<input type="button" id="btn" value="验证用户名" readonly="readonly">
+<span id="info"></span>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#btn").click(function(){
+		//alert(111)
+		//$.ajax()
+		var $lname = $("#lname").val();
+		//alert($lname)
+		if($lname.length < 6){
+			alert("小于6，重新输入")
+		}else{
+			$.getJSON("findLnameServlet",{lname:$lname},function(data){
+				//alert(data.msg)
+				//判断标识，做出页面提示信息
+				if(data.msg){
+					// 提示用户OK
+					$("#info").text("OK....").css('color','green');
+				}else{
+					// 提示用户NO
+					$("#info").text("NO....").css('color','red');
+				}
+			})
+		}
+		
+	});
+});
+
+</script>
+</form>
+
+</body>
+</html>

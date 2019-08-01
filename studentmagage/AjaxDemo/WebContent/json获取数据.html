@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+var Students = [
+	 {name:'赵四',"age":23,'gender':true,'haha':null},
+	 {name:'刘能',"age":25,'gender':true,'haha':null},
+	 {name:'广坤',"age":51,'gender':true,'haha':null}
+	 ]
+	 
+//需求：遍历这个JSON对象中数据
+// 1. 外层循环  
+for(var i = 0;i < Students.length;i++){
+	//alert(Students[i])
+	// 2. 内层循环  ,获取JSON对象的键
+	for(var key in Students[i]){
+		// 3. 显示数据 通过key获取Value   注意：使用对象["键"]方式
+		alert(Students[i][key])
+	}
+}
+
+
+
+
+</script>
+</body>
+</html>

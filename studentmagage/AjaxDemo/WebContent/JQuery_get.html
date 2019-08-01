@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button id="btn">发送AJAX请求</button>
+<input id="lname" name="lname"> 
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script>
+	$(function(){
+		$.get("AjaxServlet?lname=lisi",function(data){
+			alert(data);
+		});
+		
+	});
+</script>
+</body>
+</html>

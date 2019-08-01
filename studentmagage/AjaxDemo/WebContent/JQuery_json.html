@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button id="btn">发送AJAX请求</button>
+<input id="lname" name="lname"> <span id="info"></span>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script>
+	$(function(){
+		$("#btn").click(function(){
+			$.getJSON("AjaxServlet",function(data){
+				alert(data.welcom)
+				
+			});
+		});
+		
+		
+	});
+</script>
+</body>
+</html>

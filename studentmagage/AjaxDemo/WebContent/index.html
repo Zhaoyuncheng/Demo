@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button id="btn">发送AJAX请求</button>
+<input id="lname" name="lname"> 
+<script>
+	document.getElementById("btn").onclick = function(){
+		// 1. 创建对象
+		var xmlhttp;
+		if (window.XMLHttpRequest)
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari
+		  xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		// 2. 建立连接
+		//  open()
+		// - 参数1 ：请求方式
+		// - 参数2 ：请求URL（URI ，URN）
+		// - 参数3 ：同步或异步 （false/true） 默认是异步
+		xmlhttp.open("GET","AjaxServlet?lname=zhaosi",true);
+
+		// 3. 发送请求
+		// 如果是post方式请求，该方法需要使用一个参数
+		// - 参数：字符串
+		xmlhttp.send();
+		// 4. 处理相应结果
+		// - 存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+		//0: 请求未初始化
+		//1: 服务器连接已建立
+		//2: 请求已接收
+		//3: 请求处理中
+		//4: 请求已完成，且响应已就绪
+		// - 状态码：1XX ---》 5XX
+		xmlhttp.onreadystatechange=function()
+		  {
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		    {
+		    	alert(xmlhttp.responseText);
+		    }
+		  }
+			};
+</script>
+<a href="JQuery_ajax.html">JQuery_ajax</a><br>
+<a href="JQuery_get.html">JQuery_get</a><br>
+<a href="JQuery_post.html">JQuery_post</a><br>
+<a href="JQuery_load.html">JQuery_load</a><br>
+<a href="JQuery_json.html">JQuery_json</a><br>
+<a href="json基本语法.html">json基本语法</a><br>
+<a href="json获取数据.html">json获取数据</a><br>
+<a href="利用ajax和json仿百度注册用户名验证.html">仿百度注册用户名验证</a>
+</body>
+</html>

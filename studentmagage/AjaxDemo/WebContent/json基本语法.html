@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>基本语法</title>
+</head>
+<body>
+<!-- 
+	JSON : JavaScript Object Notation（JS对象表示法）
+	- JSON 是 存储 和 交换   文本   信息的语法。类似 XML（可扩展的标记语言）。
+	- JSON 比 XML 更小、更快，更易解析。
+	Person p = new Person();
+	p.setName();
+	p.setAge();
+	p.setGender();
+	
+	var person = {'name':'赵四','age':23,'gender':true}
+	
+	- 基本语法：
+		- 数据在名称/值对中      ： 键值对描述数据（k:v）
+			- 键（名称）：使用字符串
+				- 放在引号之间（单引号，双引号，不用引号也可以）
+				注意：统一（代码可读性好）
+			- 值：可以放什么类型的数据
+				数字（整数或浮点数）
+				字符串（在双引号中）
+				逻辑值（true 或 false）
+				数组（在方括号中）
+				对象（在花括号中）
+				null   (了解)
+		- 数据由逗号分隔	：英文逗号每一个数据
+		- 花括号保存对象	：{'name':'赵四','age':23,'gender':true}
+		- 方括号保存数组	：[{},{},{}]
+		
+		1. 基本写法
+		2.{}--》[]
+		3.[]--》{}
+		
+		
+	- 获取数据
+		- 对象.键名
+		- 对象["键名"]
+		- 数组[索引]
+		
+	- JSON对象的数据遍历
+
+ -->
+ <script type="text/javascript">
+ // 1. JSON基本形式
+ var person = {name:'赵四',"age":23,'gender':true,'haha':null}
+ //alert(person.name + "-----" + person.age);
+ //alert(person["name"] + "-----" + person["age"]);
+ // 2. 复杂形势一：{}  ---》 []
+ for(var key in person){
+	 // 获取键
+	 //alert(key)
+	 // 获取值
+	 //alert(person.key)  不好使呀
+	 alert(person[key])
+ }
+ var Student = {name:'刘能',address:['辽宁省','铁岭','象牙村']}
+ //alert(Student);
+ 
+ // 3. 复杂形势二：[]  ---》 {}
+ var Students = [
+	 {name:'赵四',"age":23,'gender':true,'haha':null},
+	 {name:'刘能',"age":25,'gender':true,'haha':null},
+	 {name:'广坤',"age":51,'gender':true,'haha':null}
+	 ]
+ //alert(Students[2].name);
+ // 双层循环
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </script>
+</body>
+</html>
